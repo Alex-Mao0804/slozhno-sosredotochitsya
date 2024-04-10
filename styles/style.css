@@ -1,5 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+.page::-webkit-scrollbar {
+  width: 0 !important;
+}
 .page {
   margin: 0;
   color: var(--text-color, #f1b2ce);
@@ -19,14 +21,14 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr minmax(min-content, max-content) 1fr;
-  margin-block-end: 40px;
-  padding: 10px;
+  margin-block-end: var(--pad40_60);
+  padding: var(--custom-padding);
   block-size: 100vh;
 }
 
 .decorated-text {
   position: absolute;
-  margin: 10px;
+  margin: var(--custom-padding);
   inset-block-start: 0;
   inset-inline-end: 0;
 }
@@ -48,14 +50,14 @@
   block-size: 9px;
 }
 
-.header__theme-menu {
+/* .header__theme-menu {
   justify-self: end;
   align-self: center;
-}
+} */
 
 .header__theme-menu-list {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 10px;
   list-style-type: none;
 }
@@ -96,7 +98,7 @@
   justify-self: start;
   color: #db00ff;
   font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--fs-h1);
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
@@ -112,7 +114,8 @@
 .header__title-paragraph {
   justify-self: end;
   align-self: center;
-  max-inline-size: 364px;
+  min-inline-size: 355px;
+  max-inline-size: 50%;
 }
 
 .title-question {
@@ -124,44 +127,44 @@
 
 .main {
   display: grid;
-  gap: 50px;
+  gap: var(--main-gap);
 }
 
 .section {
   display: grid;
   gap: 20px;
-  margin: 0 10px 0;
+  /* grid-template-columns: auto-fit, 1fr; */
+  margin: 0 var(--custom-padding) 0;
 }
 
 .section__answer {
   display: grid;
-  gap: 18px;
-}
-
-.section__answer-block {
+  /* gap: 18px; */
+  gap: 20px;
 }
 
 h4.title-decor {
   font-weight: 400;
 }
 
-.margin {
+.section__answer-block-margin {
   margin-block-end: 20px;
 }
 
 .section-paragraph {
-  margin-block-start: 10px;
+  /* margin-block-start: 10px; */
+  margin-block-start: 9px;
 }
 
 .gallery {
   display: grid;
-  gap: 10px;
-  margin: 0 10px 0;
+  gap: var(--custom-padding);
+  margin: 0 var(--custom-padding) 0;
 }
 
 .gallery-block {
   display: grid;
-  gap: 10px;
+  gap: var(--custom-padding);
 }
 
 .gallery-img {
@@ -174,8 +177,8 @@ h4.title-decor {
   display: grid;
   justify-content: center;
   align-content: center;
-  margin: 40px 0 0;
-  padding: 10px;
+  margin: var(--pad40_60) 0 0;
+  padding: var(--custom-padding);
   block-size: 100vh;
 }
 
@@ -190,22 +193,22 @@ h4.title-decor {
 .decorative_corners::before {
   border-inline-end: 1px solid var(--accent-color);
   border-block-start: 1px solid var(--accent-color);
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
+  inset-block-start: var(--custom-padding);
+  inset-inline-end: var(--custom-padding);
 }
 
 .decorative_corners::after {
   border-inline-start: 1px solid var(--accent-color);
   border-block-end: 1px solid var(--accent-color);
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
+  inset-block-end: var(--custom-padding);
+  inset-inline-start: var(--custom-padding);
 }
 
 .footer__title {
   justify-self: start;
   color: #db00ff;
   font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--fs-h1);
   line-height: 83%;
   text-shadow: 2px 2px 0 var(--accent-color);
 }

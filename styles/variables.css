@@ -7,6 +7,93 @@
   --bg-color: #000028;
   --font-family: "IBM Plex Mono", sans-serif;
   --text-color: #f1b2ce;
-  --custom-paddind: 10px;
+  --custom-padding: 10px;
+  --pad40_60: 40px;
+  --main-gap: 50px;
+  --fs-h1: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+}
 
+/* @media (width < 1400px) {
+  :root {
+    --custom-padding: 10px;
+  }
+} */
+
+@media (width < 1024px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+  }
+  .header__theme-menu {
+    justify-self: end;
+    align-self: center;
+  }
+}
+
+@media (width >= 768px) {
+  :root {
+    --custom-padding: 20px;
+    --pad40_60: 60px;
+    --main-gap: 80px;
+    --fs-h1: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .title-question {
+    inline-size: 30.8vw;
+  }
+
+  .header__title {
+    margin-inline-start: calc(var(--custom-padding) * -1);
+  }
+
+  .section-1,
+  .section-3 {
+    grid-template-columns: 30.8vw 1fr;
+  }
+
+  .gallery-img {
+    object-fit: cover;
+    block-size: 100%;
+  }
+
+  .gallery-img:nth-child(1) {
+    grid-area: sunset;
+  }
+  .gallery-img:nth-child(2) {
+    grid-area: ice-cream;
+  }
+  .gallery-img:nth-child(3) {
+    grid-area: tape;
+  }
+  .gallery-img:nth-child(4) {
+    grid-area: books;
+  }
+  .gallery-img:nth-child(5) {
+    grid-area: street;
+  }
+
+  .gallery-block {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 25vw 29.95vw 41.41vw;
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+  }
+}
+
+@media (width >= 1024px) {
+  :root {
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: flex-start;
+  }
+
+  .section-2 > .section__answer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* .header__theme-menu-list {
+    flex-direction: row;
+  } */
 }
