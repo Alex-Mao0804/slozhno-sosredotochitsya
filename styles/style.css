@@ -1,8 +1,5 @@
-.page::-webkit-scrollbar {
-  width: 0 !important;
-}
-
 .page {
+  overflow: auto;
   color: var(--p-color);
   font-family: var(--font-family);
   font-weight: 400;
@@ -155,6 +152,7 @@ h4.title-decor {
 }
 
 .gallery__block-img {
+  object-position: center;
   inline-size: 100%;
 }
 
