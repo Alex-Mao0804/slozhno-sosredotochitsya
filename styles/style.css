@@ -31,7 +31,7 @@
 .header__decorated-text::before {
   content: "REC";
   color: var(--accent-color);
-  line-height: 139%;
+  line-height: 25px;
 }
 
 .header__decorated-text::after {
@@ -86,7 +86,7 @@
   color: var(--h1-color);
   /* font-weight: 700; */
   font-size: var(--fs-h1);
-  line-height: 83%;
+  line-height: 82.5%;
   text-shadow: 4px 4px 0 #ff0070;
 }
 
@@ -94,7 +94,7 @@
   color: var(--text-color);
   font-weight: 700;
   font-size: 18px;
-  line-height: 130%;
+  line-height: 23.4px;
   background: var(--accent-color);
 }
 
@@ -133,7 +133,8 @@
 }
 
 .section__paragraph {
-  margin-block-start: 9px;
+  margin-block-start: 10px;
+  line-height: 23.4px;
 }
 
 h4.title-decor {
