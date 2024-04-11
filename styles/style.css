@@ -10,6 +10,7 @@
   background-size: cover;
   background-attachment: fixed;
   min-inline-size: 375px;
+  background-color: var(--bg-color);
 }
 
 .header {
