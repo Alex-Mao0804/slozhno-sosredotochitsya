@@ -1,14 +1,12 @@
 :root .theme_dark {
+  --decorate-color: #ff0070;
+  --h1-color: #db00ff;
+  --text-color: #000028;
   --accent-color: #ff0070;
+  --p-color: #f1b2ce;
   --bg-color: #000028;
-  --text-color: #f1b2ce;
-  /* Дублируем переменные для тёмной темы */
 }
 
 .page.theme_dark {
   background-image: url(../images/cover-image-dark.png);
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
 }

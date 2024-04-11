@@ -1,11 +1,10 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 .page::-webkit-scrollbar {
   width: 0 !important;
 }
+
 .page {
-  margin: 0;
-  color: var(--text-color, #f1b2ce);
-  font-family: var(--font-family, sans-serif);
+  color: var(--p-color);
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   background-image: url(../images/cover-image-dark.png);
@@ -14,7 +13,6 @@
   background-size: cover;
   background-attachment: fixed;
   min-inline-size: 375px;
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .header {
@@ -26,20 +24,20 @@
   block-size: 100vh;
 }
 
-.decorated-text {
+.header__decorated-text {
   position: absolute;
   margin: var(--custom-padding);
   inset-block-start: 0;
   inset-inline-end: 0;
 }
 
-.decorated-text::before {
+.header__decorated-text::before {
   content: "REC";
   color: var(--accent-color);
   line-height: 139%;
 }
 
-.decorated-text::after {
+.header__decorated-text::after {
   content: "";
   display: inline-block;
   margin: 2px 10px 2px;
@@ -50,21 +48,15 @@
   block-size: 9px;
 }
 
-/* .header__theme-menu {
-  justify-self: end;
-  align-self: center;
-} */
-
 .header__theme-menu-list {
   display: flex;
-  /* flex-direction: column; */
   gap: 10px;
   list-style-type: none;
 }
 
 .header__theme-menu-button {
   border: none;
-  color: var(--accent-color);
+  color: var(--decorate-color);
   font-family: inherit;
   font-size: 18px;
   line-height: 100%;
@@ -73,8 +65,6 @@
   background-color: transparent;
   inline-size: 70px;
   block-size: 26px;
-
-  /* padding: 0px 13px; */
 }
 
 .header__theme-menu-button:focus {
@@ -86,25 +76,25 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
+  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border: 1px solid currentColor;
   pointer-events: none;
 }
 
 .header__title {
   justify-self: start;
-  color: #db00ff;
-  font-weight: 700;
+  color: var(--h1-color);
+  /* font-weight: 700; */
   font-size: var(--fs-h1);
   line-height: 83%;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 #ff0070;
 }
 
 .title-decor {
-  color: var(--bg-color);
+  color: var(--text-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
@@ -118,13 +108,6 @@
   max-inline-size: 50%;
 }
 
-.title-question {
-  color: var(--accent-color);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 130%;
-}
-
 .main {
   display: grid;
   gap: var(--main-gap);
@@ -133,27 +116,31 @@
 .section {
   display: grid;
   gap: 20px;
-  /* grid-template-columns: auto-fit, 1fr; */
   margin: 0 var(--custom-padding) 0;
+}
+
+.section__question {
+  color: var(--decorate-color);
+  /* font-weight: 700; */
+  font-size: inherit;
+  line-height: 130%;
 }
 
 .section__answer {
   display: grid;
-  /* gap: 18px; */
   gap: 20px;
-}
-
-h4.title-decor {
-  font-weight: 400;
 }
 
 .section__answer-block-margin {
   margin-block-end: 20px;
 }
 
-.section-paragraph {
-  /* margin-block-start: 10px; */
+.section__paragraph {
   margin-block-start: 9px;
+}
+
+h4.title-decor {
+  font-weight: 400;
 }
 
 .gallery {
@@ -162,14 +149,13 @@ h4.title-decor {
   margin: 0 var(--custom-padding) 0;
 }
 
-.gallery-block {
+.gallery__block {
   display: grid;
   gap: var(--custom-padding);
 }
 
-.gallery-img {
-  /* display: block; */
-  width: 100%;
+.gallery__block-img {
+  inline-size: 100%;
 }
 
 .footer {
@@ -191,26 +177,26 @@ h4.title-decor {
 }
 
 .decorative_corners::before {
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--decorate-color);
+  border-block-start: 1px solid var(--decorate-color);
   inset-block-start: var(--custom-padding);
   inset-inline-end: var(--custom-padding);
 }
 
 .decorative_corners::after {
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--decorate-color);
+  border-block-end: 1px solid var(--decorate-color);
   inset-block-end: var(--custom-padding);
   inset-inline-start: var(--custom-padding);
 }
 
 .footer__title {
   justify-self: start;
-  color: #db00ff;
+  color: var(--h1-color);
   font-weight: 700;
   font-size: var(--fs-h1);
   line-height: 83%;
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 #ff0070;
 }
 
 .link {
@@ -220,7 +206,7 @@ h4.title-decor {
 }
 
 .link:hover {
-  border-block-end: 1px solid var(--text-color);
+  border-block-end: 1px solid currentColor;
 }
 
 .link:focus {
@@ -228,5 +214,5 @@ h4.title-decor {
 }
 
 .link:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid currentColor;
 }

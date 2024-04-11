@@ -1,23 +1,16 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
 :root {
+  --decorate-color: #ff0070;
+  --h1-color: #db00ff;
+  --text-color: #000028;
   --accent-color: #ff0070;
+  --p-color: #f1b2ce;
   --bg-color: #000028;
   --font-family: "IBM Plex Mono", sans-serif;
-  --text-color: #f1b2ce;
   --custom-padding: 10px;
   --pad40_60: 40px;
   --main-gap: 50px;
   --fs-h1: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
-
-/* @media (width < 1400px) {
-  :root {
-    --custom-padding: 10px;
-  }
-} */
 
 @media (width < 1024px) {
   .header__theme-menu-list {
@@ -37,7 +30,7 @@
     --fs-h1: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .title-question {
+  .section__question {
     inline-size: 30.8vw;
   }
 
@@ -50,40 +43,34 @@
     grid-template-columns: 30.8vw 1fr;
   }
 
-  .gallery-img {
+  .gallery__block-img {
     object-fit: cover;
     block-size: 100%;
   }
 
-  .gallery-img:nth-child(1) {
-    grid-area: sunset;
-  }
-  .gallery-img:nth-child(2) {
-    grid-area: ice-cream;
-  }
-  .gallery-img:nth-child(3) {
-    grid-area: tape;
-  }
-  .gallery-img:nth-child(4) {
-    grid-area: books;
-  }
-  .gallery-img:nth-child(5) {
-    grid-area: street;
+  .gallery__block {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .gallery-block {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 25vw 29.95vw 41.41vw;
-    grid-template-areas:
-      "sunset sunset ice-cream"
-      "tape books ice-cream"
-      "tape street street";
+  .gallery__block-img:nth-child(1) {
+    grid-column: span 2;
   }
+
+  .gallery__block-img:nth-child(2) {
+    grid-row: span 2;
+  }
+
+  .gallery__block-img:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .gallery__block-img:nth-child(5) {
+    grid-column: span 2;
+  }
+
 }
 
 @media (width >= 1024px) {
-  :root {
-  }
 
   .header__theme-menu {
     justify-self: center;
@@ -93,7 +80,5 @@
   .section-2 > .section__answer {
     grid-template-columns: repeat(3, 1fr);
   }
-  /* .header__theme-menu-list {
-    flex-direction: row;
-  } */
+
 }
