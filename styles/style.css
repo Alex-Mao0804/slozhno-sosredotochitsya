@@ -85,7 +85,6 @@
 .header__title {
   justify-self: start;
   color: var(--h1-color);
-  /* font-weight: 700; */
   font-size: var(--fs-h1);
   line-height: 82.5%;
   text-shadow: 4px 4px 0 #ff0070;
@@ -119,7 +118,6 @@
 
 .section__question {
   color: var(--decorate-color);
-  /* font-weight: 700; */
   font-size: inherit;
   line-height: 130%;
 }
